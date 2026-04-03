@@ -9,6 +9,10 @@
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .gradient-bg { background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); }
+        
+        /* Accordion Styles */
+        .faq-details[open] .faq-icon { transform: rotate(180deg); }
+        .faq-details summary::-webkit-details-marker { display: none; }
     </style>
 </head>
 <body class="text-slate-900 gradient-bg">
@@ -17,7 +21,7 @@
         <div class="max-w-4xl mx-auto px-4 md:px-6 flex justify-between items-center">
             <span class="font-bold text-slate-800 tracking-tight text-[10px] md:text-base uppercase">No on Measure B</span>
             <div class="space-x-3 md:space-x-8 flex items-center">
-                <a href="Measure_B_faq.pdf" target="_blank" class="text-[10px] md:text-xs font-bold text-slate-500 hover:text-blue-700 uppercase tracking-wider transition">FAQ</a>
+                <a href="#faq" class="text-[10px] md:text-xs font-bold text-slate-500 hover:text-blue-700 uppercase tracking-wider transition">FAQ</a>
                 <a href="#official-argument" class="text-[10px] md:text-xs font-bold text-slate-500 hover:text-blue-700 uppercase tracking-wider transition">Official Argument</a>
                 <a href="#action" class="bg-red-600 text-white px-3 py-2 rounded-lg text-[10px] md:text-sm font-bold hover:bg-red-700 transition shadow-sm">VOTE NO</a>
             </div>
@@ -99,6 +103,52 @@
                     <p>Property tax revenue grows by an average of $15 million every year. That’s the equivalent of adding a new parcel tax annually without asking for more from neighbors.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="faq" class="max-w-3xl mx-auto px-6 py-20">
+        <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">Frequently Asked Questions</h2>
+        
+        <div class="space-y-4">
+            <details class="faq-details group bg-white border border-slate-200 rounded-2xl transition-all duration-300">
+                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                    <span class="text-lg font-bold text-slate-800 pr-4">Why does PAUSD say that there will be layoffs if the parcel tax doesn't pass, while you say the district has plenty of money?</span>
+                    <svg class="faq-icon w-6 h-6 text-blue-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                    The school board never asked staff to analyze the impact of declining enrollments, increasing property tax revenues, and the $100 million in reserves[cite: 3, 4]. Instead, they focused on polling to see what voters might approve rather than what the district actually needs[cite: 5, 6, 7].
+                </div>
+            </details>
+
+            <details class="faq-details group bg-white border border-slate-200 rounded-2xl transition-all duration-300">
+                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                    <span class="text-lg font-bold text-slate-800 pr-4">What if you're wrong and the district needs a parcel tax in the future? For example, what if property taxes stop going up?</span>
+                    <svg class="faq-icon w-6 h-6 text-blue-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                    The $100 million in reserves provides a massive cushion—nearly a third of an entire year's budget and 10 times the state's requirement[cite: 10, 11]. It is larger than the entire anticipated parcel tax revenue, providing plenty of time for a future board to adopt a tax if the world changes unexpectedly[cite: 12].
+                </div>
+            </details>
+
+            <details class="faq-details group bg-white border border-slate-200 rounded-2xl transition-all duration-300">
+                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                    <span class="text-lg font-bold text-slate-800 pr-4">What are the downsides of voting for a parcel tax now? Isn't it the safer route?</span>
+                    <svg class="faq-icon w-6 h-6 text-blue-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                    The main downside is that you and your neighbors will have less money for things you actually need[cite: 14]. Furthermore, excess money can lead to unnecessary spending, such as excessive pay increases for administrators[cite: 16, 17]. There is little defense against such spending when the district holds outsized cash reserves[cite: 19].
+                </div>
+            </details>
+
+            <details class="faq-details group bg-white border border-slate-200 rounded-2xl transition-all duration-300">
+                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                    <span class="text-lg font-bold text-slate-800 pr-4">Isn't it a big break with tradition to turn down a parcel tax?</span>
+                    <svg class="faq-icon w-6 h-6 text-blue-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                    Actually, PAUSD didn't have a parcel tax until 2001[cite: 21]. It was meant to be a short-term measure to close a funding gap, not a permanent tax disconnected from actual need[cite: 23, 24]. The parcel tax should be paused until and unless it is truly needed again[cite: 26].
+                </div>
+            </details>
         </div>
     </section>
 

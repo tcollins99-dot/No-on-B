@@ -18,7 +18,7 @@
         .faq-details[open] .faq-icon { transform: rotate(180deg); }
         .faq-details summary::-webkit-details-marker { display: none; }
 
-        /* Carousel Styles */
+        /* Carousel Styles (Shared for Video & Charts) */
         .carousel-container {
             display: flex;
             overflow-x: scroll;
@@ -85,10 +85,10 @@
             <div class="flex justify-between items-center mb-6">
                 <h3 class="text-slate-500 font-bold uppercase tracking-widest text-xs">Video Gallery</h3>
                 <div class="flex space-x-2">
-                    <button onclick="scrollCarousel(-1)" class="bg-white p-2 rounded-full shadow hover:bg-slate-50 transition text-blue-600">
+                    <button onclick="scrollCarousel('videoCarousel', -1)" class="bg-white p-2 rounded-full shadow hover:bg-slate-50 transition text-blue-600">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                     </button>
-                    <button onclick="scrollCarousel(1)" class="bg-white p-2 rounded-full shadow hover:bg-slate-50 transition text-blue-600">
+                    <button onclick="scrollCarousel('videoCarousel', 1)" class="bg-white p-2 rounded-full shadow hover:bg-slate-50 transition text-blue-600">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     </button>
                 </div>
@@ -106,7 +106,6 @@
                     </div>
                 </div>
             </div>
-            <p class="mt-4 text-center text-slate-400 text-[10px] uppercase font-bold tracking-widest">Swipe or use arrows to view more</p>
         </div>
     </section>
 
@@ -137,9 +136,29 @@
     </section>
 
     <section class="max-w-4xl mx-auto px-6 mb-20">
-        <div class="bg-white rounded-3xl border border-slate-200 shadow-lg overflow-hidden p-4 md:p-8">
-            <h3 class="text-center text-slate-500 font-bold uppercase tracking-widest text-xs mb-6">The Data: Enrollment vs. Reserves</h3>
-            <img src="Enrollment vs Reserves graph v1.png" alt="Graph showing PAUSD Enrollment dropping while Cash Reserves skyrocket" class="w-[80%] h-auto rounded-xl mx-auto block">
+        <div class="bg-white rounded-3xl border border-slate-200 shadow-lg p-4 md:p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-slate-500 font-bold uppercase tracking-widest text-xs">The Data: Charts & Analysis</h3>
+                <div class="flex space-x-2">
+                    <button onclick="scrollCarousel('chartCarousel', -1)" class="bg-slate-100 p-2 rounded-full hover:bg-slate-200 transition text-slate-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button onclick="scrollCarousel('chartCarousel', 1)" class="bg-slate-100 p-2 rounded-full hover:bg-slate-200 transition text-slate-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="chartCarousel" class="carousel-container">
+                <div class="carousel-item">
+                    <img src="Enrollment vs Reserves graph v1.png" alt="Enrollment dropping while reserves skyrocket" class="w-full md:w-[85%] h-auto rounded-xl mx-auto block">
+                    <p class="text-center text-slate-400 text-[10px] mt-4 uppercase font-bold tracking-widest">Chart 1: Enrollment vs. Reserves</p>
+                </div>
+                <div class="carousel-item">
+                    <img src="1st_and_Total_Enrollment v1.png" alt="Secondary data analysis" class="w-full md:w-[85%] h-auto rounded-xl mx-auto block">
+                    <p class="text-center text-slate-400 text-[10px] mt-4 uppercase font-bold tracking-widest">Chart 2: Analysis of Property Tax Growth</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -165,7 +184,6 @@
 
     <section id="faq" class="max-w-3xl mx-auto px-6 pt-20 pb-10">
         <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">Frequently Asked Questions</h2>
-        
         <div class="space-y-4">
             <details class="faq-details group bg-white border border-slate-200 rounded-2xl transition-all duration-300">
                 <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
@@ -176,41 +194,7 @@
                     The school board never asked the district staff to analyze the impact of declining enrollment, increasing property tax revenues, and over $100 million in reserves. Instead, they only discussed what level of tax could be expected to pass – which is why they reduced the level to $800 / year. That also wasn’t based on an analysis of what the district actually needs. It was based on polling of what voters might approve.
                 </div>
             </details>
-
-            <details class="faq-details group bg-white border border-slate-200 rounded-2xl transition-all duration-300">
-                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-                    <span class="text-lg font-bold text-slate-800 pr-4">What if you’re wrong and the district needs a parcel tax in the future? For example, what if property taxes stop going up?</span>
-                    <svg class="faq-icon w-6 h-6 text-blue-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <div class="px-6 pb-6 text-slate-600 leading-relaxed space-y-4">
-                    <p>The $100 million in reserves provides a very large cushion for any unexpected changes. For perspective, it’s 10 times larger than the state’s requirement for reserves, and nearly a third of an entire year’s budget. It’s larger than the entire anticipated parcel tax revenue over its full four-year term.</p>
-                    <p>If the world changes in unexpected ways, the reserve will provide plenty of time for a future board to adopt a parcel tax.</p>
-                </div>
-            </details>
-
-            <details class="faq-details group bg-white border border-slate-200 rounded-2xl transition-all duration-300">
-                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-                    <span class="text-lg font-bold text-slate-800 pr-4">What are the downsides of voting for a parcel tax now? Isn’t it the safer route?</span>
-                    <svg class="faq-icon w-6 h-6 text-blue-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <div class="px-6 pb-6 text-slate-600 leading-relaxed space-y-4">
-                    <p>The main downside is that you and your neighbors will have less money in your pocket for things that you actually need. Padding the district’s bank account doesn’t deliver much value, certainly once it already holds $100 million.</p>
-                    <p>The other negative is that when the district has too much money, it’s very tempting to spend it on unnecessary things. The most likely of these is: excessive pay increases for administrators and staff.</p>
-                    <p>In fact, the teachers union is already pointing to the $100 million reserve to justify pay increases that are multiples of the rate of inflation, even though the district is already a very attractive place to work. There is little defense against this with over $100 million in cash reserves.</p>
-                </div>
-            </details>
-
-            <details class="faq-details group bg-white border border-slate-200 rounded-2xl transition-all duration-300">
-                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-                    <span class="text-lg font-bold text-slate-800 pr-4">Isn’t it a big break with tradition to turn down a parcel tax?</span>
-                    <svg class="faq-icon w-6 h-6 text-blue-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <div class="px-6 pb-6 text-slate-600 leading-relaxed space-y-4">
-                    <p>Actually, PAUSD didn’t have a parcel tax until 2001, when the district faced increasing enrollment and slow growing property tax revenues because of the dot-com bust.</p>
-                    <p>The parcel tax was meant to be a short-term measure to close a funding gap. It was never meant to be a permanent tax disconnected from the district’s actual need. The property tax is the long term stable funding source for the district. The parcel tax should be paused until and unless it is needed again.</p>
-                </div>
-            </details>
-        </div>
+            </div>
     </section>
 
     <section id="official-argument" class="max-w-4xl mx-auto px-6 py-16 text-center border-b border-slate-200">
@@ -227,7 +211,7 @@
     </section>
 
     <section class="max-w-3xl mx-auto px-6 pt-8 pb-24 text-center">
-        <h3 class="text-sm font-bold text-blue-600 uppercase tracking-widest mb-6">A Message from Former Board Leaders</h3>
+        <h3 class="text-sm font-bold text-blue-600 uppercase tracking-widest mb-6 text-center">A Message from Former Board Leaders</h3>
         <p class="text-2xl md:text-3xl font-semibold leading-snug text-slate-800 mb-8 text-left">
             "Like many others, we have supported every local bond and parcel tax — until now. But the current Board needs to show they can be responsible stewards of our resources before adding over $50 million in new taxes. They need to start spending the giant reserves they already have."
         </p>
@@ -243,8 +227,9 @@
     </footer>
 
     <script>
-        function scrollCarousel(direction) {
-            const container = document.getElementById('videoCarousel');
+        /* Updated JS to handle multiple carousels by ID */
+        function scrollCarousel(carouselId, direction) {
+            const container = document.getElementById(carouselId);
             const scrollAmount = container.clientWidth;
             container.scrollBy({
                 left: direction * scrollAmount,
@@ -252,6 +237,3 @@
             });
         }
     </script>
-
-</body>
-</html>

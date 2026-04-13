@@ -24,14 +24,14 @@
             overflow-x: scroll;
             scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
-            scrollbar-width: none; /* Hide scrollbar for Chrome/Safari */
+            scrollbar-width: none;
         }
         .carousel-container::-webkit-scrollbar { display: none; }
         
         .carousel-item {
             flex: 0 0 100%;
             scroll-snap-align: start;
-            padding: 0 10px;
+            padding: 0 5px;
         }
 
         .video-container {
@@ -115,6 +115,132 @@
             PAUSD <span class="text-blue-700">already has more money than it can spend</span>
         </h1>
     </header>
+
+    <section class="max-w-4xl mx-auto px-6 mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="text-3xl font-bold text-blue-700 mb-2">$100M+</div>
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">In Reserves</p>
+                <p class="text-slate-600 text-sm leading-relaxed">Up from $25M in 2019. The district is accumulating massive surpluses.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="text-3xl font-bold text-blue-700 mb-2">$35,000</div>
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Per Student</p>
+                <p class="text-slate-600 text-sm leading-relaxed">Funding has more than doubled since 2014, even as enrollment has dropped.</p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="text-3xl font-bold text-red-600 mb-2">-20%</div>
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Enrollment Drop</p>
+                <p class="text-slate-600 text-sm leading-relaxed">Property tax revenue grows by $15M/year despite having fewer students.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-6 mb-20">
+        <div class="bg-white rounded-3xl border border-slate-200 shadow-lg overflow-hidden p-4 md:p-8">
+            <h3 class="text-center text-slate-500 font-bold uppercase tracking-widest text-xs mb-6">The Data: Enrollment vs. Reserves</h3>
+            <img src="Enrollment vs Reserves graph v1.png" alt="Graph showing PAUSD Enrollment dropping while Cash Reserves skyrocket" class="w-[80%] h-auto rounded-xl mx-auto block">
+        </div>
+    </section>
+
+    <section id="argument" class="bg-slate-900 text-white py-20">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-10 text-center">Why the Math has Changed</h2>
+            <div class="space-y-10 text-lg text-slate-300">
+                <div class="border-l-4 border-blue-500 pl-6">
+                    <h3 class="text-white font-bold mb-2">Enrollment Trends</h3>
+                    <p>While property tax revenue has doubled, enrollment has dropped 20% in 10 years. Last year’s 1st grade class was 30% smaller than the graduating senior class.</p>
+                </div>
+                <div class="border-l-4 border-blue-500 pl-6">
+                    <h3 class="text-white font-bold mb-2">A Minor Fraction</h3>
+                    <p>The parcel tax now represents less than 5% of total funding. Our schools will remain among the best-funded in the nation even without this tax.</p>
+                </div>
+                <div class="border-l-4 border-blue-500 pl-6">
+                    <h3 class="text-white font-bold mb-2">Natural Growth is Enough</h3>
+                    <p>Property tax revenue grows by an average of $15 million every year. That’s the equivalent of adding a new parcel tax annually without asking for more from neighbors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="max-w-3xl mx-auto px-6 pt-20 pb-10">
+        <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">Frequently Asked Questions</h2>
+        
+        <div class="space-y-4">
+            <details class="faq-details group bg-white border border-slate-200 rounded-2xl transition-all duration-300">
+                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                    <span class="text-lg font-bold text-slate-800 pr-4">Why does PAUSD say that there will be layoffs and other consequences if the parcel tax doesn’t pass, while you say that the district has plenty of money?</span>
+                    <svg class="faq-icon w-6 h-6 text-blue-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                    The school board never asked the district staff to analyze the impact of declining enrollment, increasing property tax revenues, and over $100 million in reserves. Instead, they only discussed what level of tax could be expected to pass – which is why they reduced the level to $800 / year. That also wasn’t based on an analysis of what the district actually needs. It was based on polling of what voters might approve.
+                </div>
+            </details>
+
+            <details class="faq-details group bg-white border border-slate-200 rounded-2xl transition-all duration-300">
+                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                    <span class="text-lg font-bold text-slate-800 pr-4">What if you’re wrong and the district needs a parcel tax in the future? For example, what if property taxes stop going up?</span>
+                    <svg class="faq-icon w-6 h-6 text-blue-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="px-6 pb-6 text-slate-600 leading-relaxed space-y-4">
+                    <p>The $100 million in reserves provides a very large cushion for any unexpected changes. For perspective, it’s 10 times larger than the state’s requirement for reserves, and nearly a third of an entire year’s budget. It’s larger than the entire anticipated parcel tax revenue over its full four-year term.</p>
+                    <p>If the world changes in unexpected ways, the reserve will provide plenty of time for a future board to adopt a parcel tax.</p>
+                </div>
+            </details>
+
+            <details class="faq-details group bg-white border border-slate-200 rounded-2xl transition-all duration-300">
+                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                    <span class="text-lg font-bold text-slate-800 pr-4">What are the downsides of voting for a parcel tax now? Isn’t it the safer route?</span>
+                    <svg class="faq-icon w-6 h-6 text-blue-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="px-6 pb-6 text-slate-600 leading-relaxed space-y-4">
+                    <p>The main downside is that you and your neighbors will have less money in your pocket for things that you actually need. Padding the district’s bank account doesn’t deliver much value, certainly once it already holds $100 million.</p>
+                    <p>The other negative is that when the district has too much money, it’s very tempting to spend it on unnecessary things. The most likely of these is: excessive pay increases for administrators and staff.</p>
+                    <p>In fact, the teachers union is already pointing to the $100 million reserve to justify pay increases that are multiples of the rate of inflation, even though the district is already a very attractive place to work. There is little defense against this with over $100 million in cash reserves.</p>
+                </div>
+            </details>
+
+            <details class="faq-details group bg-white border border-slate-200 rounded-2xl transition-all duration-300">
+                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
+                    <span class="text-lg font-bold text-slate-800 pr-4">Isn’t it a big break with tradition to turn down a parcel tax?</span>
+                    <svg class="faq-icon w-6 h-6 text-blue-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </summary>
+                <div class="px-6 pb-6 text-slate-600 leading-relaxed space-y-4">
+                    <p>Actually, PAUSD didn’t have a parcel tax until 2001, when the district faced increasing enrollment and slow growing property tax revenues because of the dot-com bust.</p>
+                    <p>The parcel tax was meant to be a short-term measure to close a funding gap. It was never meant to be a permanent tax disconnected from the district’s actual need. The property tax is the long term stable funding source for the district. The parcel tax should be paused until and unless it is needed again.</p>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <section id="official-argument" class="max-w-4xl mx-auto px-6 py-16 text-center border-b border-slate-200">
+        <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 md:p-12">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">Official Documentation</h2>
+            <p class="text-slate-600 mb-8 max-w-xl mx-auto text-lg">
+                Review the formal case against the measure as submitted to the County Registrar.
+            </p>
+            <a href="Ballot_Measure_Argument.pdf" target="_blank" class="inline-flex items-center justify-center px-8 py-4 bg-white border border-slate-300 text-slate-700 font-bold rounded-xl shadow-sm hover:shadow-md hover:border-blue-600 hover:text-blue-700 transition group">
+                <svg class="w-5 h-5 mr-3 text-slate-400 group-hover:text-blue-600 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                Read the argument from the Official Ballot Materials
+            </a>
+        </div>
+    </section>
+
+    <section class="max-w-3xl mx-auto px-6 pt-8 pb-24 text-center">
+        <h3 class="text-sm font-bold text-blue-600 uppercase tracking-widest mb-6">A Message from Former Board Leaders</h3>
+        <p class="text-2xl md:text-3xl font-semibold leading-snug text-slate-800 mb-8 text-left">
+            "Like many others, we have supported every local bond and parcel tax — until now. But the current Board needs to show they can be responsible stewards of our resources before adding over $50 million in new taxes. They need to start spending the giant reserves they already have."
+        </p>
+        <p class="text-slate-500 font-bold text-lg text-center">— Former PAUSD Board Presidents Ken Dauber and Todd Collins</p>
+    </section>
+
+    <footer id="action" class="bg-red-600 py-20 text-center text-white px-6">
+        <h2 class="text-4xl md:text-5xl font-black mb-4 tracking-tight uppercase">Vote NO on Measure B</h2>
+        <p class="text-xl opacity-90 mb-10 font-medium">Strong Schools, Common Sense</p>
+        <div class="max-w-md mx-auto bg-black/20 backdrop-blur-md p-6 rounded-2xl text-xs leading-relaxed uppercase tracking-widest font-semibold">
+            Paid for by Todd Collins (less than $20)
+        </div>
+    </footer>
 
     <script>
         function scrollCarousel(direction) {

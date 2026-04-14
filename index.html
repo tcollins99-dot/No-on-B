@@ -173,8 +173,12 @@
                     <p class="text-center text-slate-400 text-[10px] mt-4 uppercase font-bold tracking-widest">Chart 3: Property Tax Trends</p>
                 </div>
                 <div class="carousel-item">
+                    <img src="Enrollment_vs_Property_Tax_Trend_v1.png" alt="Enrollment vs Property Tax Trend" class="w-full md:w-[85%] h-auto rounded-xl mx-auto block">
+                    <p class="text-center text-slate-400 text-[10px] mt-4 uppercase font-bold tracking-widest">Chart 4: Enrollment vs. Property Tax Trend</p>
+                </div>
+                <div class="carousel-item">
                     <img src="1st_and_Total_Enrollment v1.png" alt="Enrollment Detail" class="w-full md:w-[85%] h-auto rounded-xl mx-auto block">
-                    <p class="text-center text-slate-400 text-[10px] mt-4 uppercase font-bold tracking-widest">Chart 4: Enrollment Detail</p>
+                    <p class="text-center text-slate-400 text-[10px] mt-4 uppercase font-bold tracking-widest">Chart 5: Enrollment Detail</p>
                 </div>
             </div>
             <p class="mt-4 text-center text-slate-400 text-[10px] uppercase font-bold tracking-widest">Auto-advancing • Swipe or use arrows</p>
@@ -278,7 +282,6 @@
             const container = document.getElementById(carouselId);
             const scrollAmount = container.clientWidth;
             
-            // If at the end, wrap around to the start
             if (direction === 1 && (container.scrollLeft + container.offsetWidth) >= container.scrollWidth - 10) {
                 container.scrollTo({ left: 0, behavior: 'smooth' });
             } else if (direction === -1 && container.scrollLeft <= 0) {
@@ -288,7 +291,6 @@
             }
         }
 
-        // Auto-advance logic
         const carousels = ['videoCarousel', 'chartCarousel'];
         let intervals = {};
 
@@ -299,10 +301,8 @@
         carousels.forEach(id => {
             startAutoAdvance(id);
             const el = document.getElementById(id);
-            // Pause on interaction
             el.addEventListener('mouseenter', () => clearInterval(intervals[id]));
             el.addEventListener('touchstart', () => clearInterval(intervals[id]));
-            // Resume on leave
             el.addEventListener('mouseleave', () => startAutoAdvance(id));
         });
     </script>

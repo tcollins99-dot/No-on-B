@@ -79,59 +79,9 @@
         </div>
     </section>
 
-    <section class="max-w-4xl mx-auto px-6 pt-12">
-        <div class="bg-slate-100 rounded-3xl p-6 md:p-8 shadow-inner border border-slate-200">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-slate-500 font-bold uppercase tracking-widest text-xs">Video Gallery</h3>
-                <div class="flex space-x-2">
-                    <button onclick="scrollCarousel('videoCarousel', -1)" class="bg-white p-2 rounded-full shadow hover:bg-slate-50 transition text-blue-600">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                    </button>
-                    <button onclick="scrollCarousel('videoCarousel', 1)" class="bg-white p-2 rounded-full shadow hover:bg-slate-50 transition text-blue-600">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                </div>
-            </div>
-
-            <div id="videoCarousel" class="carousel-container">
-                <div class="carousel-item">
-                    <div class="video-container shadow-xl">
-                        <iframe src="https://www.youtube.com/embed/hNAJy5MiWVE" title="Video 1" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="video-container shadow-xl">
-                        <iframe src="https://www.youtube.com/embed/ICLLcU0t1Ho" title="Video 2" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="video-container shadow-xl">
-                        <iframe src="https://www.youtube.com/embed/dlYFrpe0o5w" title="Video 3" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="video-container shadow-xl">
-                        <iframe src="https://www.youtube.com/embed/LCMVkM1NeUw" title="Video 4" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="video-container shadow-xl">
-                        <iframe src="https://www.youtube.com/embed/7RuqoUE-9v0" title="Video 5" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="video-container shadow-xl">
-                        <iframe src="https://www.youtube.com/embed/hCJX98iB3cE" title="Video 6" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-            <p class="mt-4 text-center text-slate-400 text-[10px] uppercase font-bold tracking-widest">Auto-advancing • Swipe or use arrows</p>
-        </div>
-    </section>
-
-    <header class="max-w-4xl mx-auto px-6 pt-12 pb-12 text-center">
+    <header class="max-w-4xl mx-auto px-6 pt-16 pb-12 text-center">
         <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight tracking-tight">
-            PAUSD <span class="text-blue-700">already has more money than it can spend</span>
+            PAUSD <span class="text-blue-700">already has more money than it can spend, with rising property taxes and declining enrollment</span>
         </h1>
     </header>
 
@@ -155,21 +105,21 @@
         </div>
     </section>
 
-    <section class="max-w-4xl mx-auto px-6 mb-20">
+    <section class="max-w-4xl mx-auto px-6 mb-12">
         <div class="bg-white rounded-3xl border border-slate-200 shadow-lg p-4 md:p-8">
             <div class="flex justify-between items-center mb-6">
                 <h3 class="text-slate-500 font-bold uppercase tracking-widest text-xs">The Data: Charts & Analysis</h3>
                 <div class="flex space-x-2">
-                    <button onclick="scrollCarousel('chartCarousel', -1)" class="bg-slate-100 p-2 rounded-full hover:bg-slate-200 transition text-slate-600">
+                    <button onclick="scrollCarousel('chartCarousel', -1); stopAuto('chartCarousel')" class="bg-slate-100 p-2 rounded-full hover:bg-slate-200 transition text-slate-600">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                     </button>
-                    <button onclick="scrollCarousel('chartCarousel', 1)" class="bg-slate-100 p-2 rounded-full hover:bg-slate-200 transition text-slate-600">
+                    <button onclick="scrollCarousel('chartCarousel', 1); stopAuto('chartCarousel')" class="bg-slate-100 p-2 rounded-full hover:bg-slate-200 transition text-slate-600">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     </button>
                 </div>
             </div>
 
-            <div id="chartCarousel" class="carousel-container">
+            <div id="chartCarousel" class="carousel-container" onmouseenter="stopAuto('chartCarousel')" ontouchstart="stopAuto('chartCarousel')">
                 <div class="carousel-item">
                     <img src="Enrollment vs Reserves graph v1.png" alt="Enrollment vs. Reserves" class="w-full md:w-[85%] h-auto rounded-xl mx-auto block">
                     <p class="text-center text-slate-400 text-[10px] mt-4 uppercase font-bold tracking-widest">Chart 1: Enrollment vs. Reserves</p>
@@ -191,31 +141,36 @@
                     <p class="text-center text-slate-400 text-[10px] mt-4 uppercase font-bold tracking-widest">Chart 5: Enrollment Detail</p>
                 </div>
             </div>
-            <p class="mt-4 text-center text-slate-400 text-[10px] uppercase font-bold tracking-widest">Auto-advancing • Swipe or use arrows</p>
+            <p class="mt-4 text-center text-slate-400 text-[10px] uppercase font-bold tracking-widest">Swipe or use arrows to view</p>
         </div>
     </section>
 
-    <section id="argument" class="bg-slate-900 text-white py-20">
-        <div class="max-w-3xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-10 text-center">Why the Math has Changed</h2>
-            <div class="space-y-10 text-lg text-slate-300">
-                <div class="border-l-4 border-blue-500 pl-6">
-                    <h3 class="text-white font-bold mb-2">Enrollment Trends</h3>
-                    <p>While property tax revenue has doubled, enrollment has dropped 20% in 10 years. Last year’s 1st grade class was 30% smaller than the graduating senior class.</p>
-                </div>
-                <div class="border-l-4 border-blue-500 pl-6">
-                    <h3 class="text-white font-bold mb-2">A Minor Fraction</h3>
-                    <p>The parcel tax now represents less than 5% of total funding. Our schools will remain among the best-funded in the nation even without this tax.</p>
-                </div>
-                <div class="border-l-4 border-blue-500 pl-6">
-                    <h3 class="text-white font-bold mb-2">Natural Growth is Enough</h3>
-                    <p>Property tax revenue grows by an average of $15 million every year. That’s the equivalent of adding a new parcel tax annually without asking for more from neighbors.</p>
+    <section class="max-w-4xl mx-auto px-6 mb-20">
+        <div class="bg-slate-100 rounded-3xl p-6 md:p-8 shadow-inner border border-slate-200">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-slate-500 font-bold uppercase tracking-widest text-xs">Video Gallery</h3>
+                <div class="flex space-x-2">
+                    <button onclick="scrollCarousel('videoCarousel', -1); stopAuto('videoCarousel')" class="bg-white p-2 rounded-full shadow hover:bg-slate-50 transition text-blue-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button onclick="scrollCarousel('videoCarousel', 1); stopAuto('videoCarousel')" class="bg-white p-2 rounded-full shadow hover:bg-slate-50 transition text-blue-600">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
                 </div>
             </div>
+
+            <div id="videoCarousel" class="carousel-container" onmouseenter="stopAuto('videoCarousel')" ontouchstart="stopAuto('videoCarousel')">
+                <div class="carousel-item"><div class="video-container shadow-xl"><iframe src="https://www.youtube.com/embed/honxj6rzu68" title="Video 1" frameborder="0" allowfullscreen></iframe></div></div>
+                <div class="carousel-item"><div class="video-container shadow-xl"><iframe src="https://www.youtube.com/embed/ZxDRFj9jhmM" title="Video 2" frameborder="0" allowfullscreen></iframe></div></div>
+                <div class="carousel-item"><div class="video-container shadow-xl"><iframe src="https://www.youtube.com/embed/91lg0smPGFc" title="Video 3" frameborder="0" allowfullscreen></iframe></div></div>
+                <div class="carousel-item"><div class="video-container shadow-xl"><iframe src="https://www.youtube.com/embed/eMd4njf3zww" title="Video 4" frameborder="0" allowfullscreen></iframe></div></div>
+                <div class="carousel-item"><div class="video-container shadow-xl"><iframe src="https://www.youtube.com/embed/iTMkjSfxxeI" title="Video 5" frameborder="0" allowfullscreen></iframe></div></div>
+            </div>
+            <p class="mt-4 text-center text-slate-400 text-[10px] uppercase font-bold tracking-widest">Swipe or use arrows to view</p>
         </div>
     </section>
 
-    <section id="faq" class="max-w-3xl mx-auto px-6 pt-20 pb-10">
+    <section id="faq" class="max-w-3xl mx-auto px-6 pt-10 pb-10">
         <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">Frequently Asked Questions</h2>
         <div class="space-y-4">
             <details class="faq-details group bg-white border border-slate-200 rounded-2xl transition-all duration-300">
@@ -224,37 +179,17 @@
                     <svg class="faq-icon w-6 h-6 text-blue-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </summary>
                 <div class="px-6 pb-6 text-slate-600 leading-relaxed">
-                    The school board never asked the district staff to analyze the impact of declining enrollment, increasing property tax revenues, and over $100 million in reserves. Instead, they only discussed what level of tax could be expected to pass – which is why they reduced the level to $800 / year. That also wasn’t based on an analysis of what the district actually needs. It was based on polling of what voters might approve.
+                    The school board never asked the district staff to analyze the impact of declining enrollment, increasing property tax revenues, and over $100 million in reserves. Instead, they only discussed what level of tax could be expected to pass. That wasn’t based on an analysis of what the district actually needs; it was based on polling of what voters might approve.
                 </div>
             </details>
 
             <details class="faq-details group bg-white border border-slate-200 rounded-2xl transition-all duration-300">
                 <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-                    <span class="text-lg font-bold text-slate-800 pr-4">What if you’re wrong and the district needs a parcel tax in the future? For example, what if property taxes stop going up?</span>
+                    <span class="text-lg font-bold text-slate-800 pr-4">What if property taxes stop going up?</span>
                     <svg class="faq-icon w-6 h-6 text-blue-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </summary>
-                <div class="px-6 pb-6 text-slate-600 leading-relaxed space-y-4">
-                    <p>The $100 million in reserves provides a very large cushion for any unexpected changes. For perspective, it’s 10 times larger than the state’s requirement for reserves, and nearly a third of an entire year’s budget. It’s larger than the entire anticipated parcel tax revenue over its full four-year term.</p>
-                </div>
-            </details>
-
-            <details class="faq-details group bg-white border border-slate-200 rounded-2xl transition-all duration-300">
-                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-                    <span class="text-lg font-bold text-slate-800 pr-4">What are the downsides of voting for a parcel tax now? Isn’t it the safer route?</span>
-                    <svg class="faq-icon w-6 h-6 text-blue-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <div class="px-6 pb-6 text-slate-600 leading-relaxed space-y-4">
-                    <p>The main downside is that you and your neighbors will have less money in your pocket for things that you actually need. Padding the district’s bank account doesn’t deliver much value, certainly once it already holds $100 million.</p>
-                </div>
-            </details>
-
-            <details class="faq-details group bg-white border border-slate-200 rounded-2xl transition-all duration-300">
-                <summary class="flex justify-between items-center p-6 cursor-pointer list-none">
-                    <span class="text-lg font-bold text-slate-800 pr-4">Isn’t it a big break with tradition to turn down a parcel tax?</span>
-                    <svg class="faq-icon w-6 h-6 text-blue-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </summary>
-                <div class="px-6 pb-6 text-slate-600 leading-relaxed space-y-4">
-                    <p>Actually, PAUSD didn’t have a parcel tax until 2001, when the district faced increasing enrollment and slow growing property tax revenues because of the dot-com bust.</p>
+                <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+                    The $100 million in reserves provides a very large cushion for unexpected changes. It is 10 times larger than the state’s requirement and nearly a third of an entire year’s budget. If the world changes, the reserve provides years of time for a future board to adapt.
                 </div>
             </details>
         </div>
@@ -308,12 +243,15 @@
             intervals[id] = setInterval(() => scrollCarousel(id, 1), 5000);
         }
 
+        function stopAuto(id) {
+            if (intervals[id]) {
+                clearInterval(intervals[id]);
+                intervals[id] = null; // Mark as permanently stopped
+            }
+        }
+
         carousels.forEach(id => {
             startAutoAdvance(id);
-            const el = document.getElementById(id);
-            el.addEventListener('mouseenter', () => clearInterval(intervals[id]));
-            el.addEventListener('touchstart', () => clearInterval(intervals[id]));
-            el.addEventListener('mouseleave', () => startAutoAdvance(id));
         });
     </script>
 
